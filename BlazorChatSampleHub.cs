@@ -26,29 +26,3 @@ namespace BlazorChat
         }
     }
 }
-
-public class StockMarket : ISubject
-{
-    private List<IObserver> observers = new List<IObserver>();
-
-    public void RegisterObserver(IObserver observer) =>
-        observers.Add(observer);
-
-    public void RemoveObserver(IObserver observer) => 
-        observers.Remove(observer);
-
-    public void NotifyObservers(string status)
-    {
-        foreach (var observer in observers)
-            observer.Update(status);
-    }
-}
-public interface IObserver
-{
-    void Update(string status);
-}
-public class Investor : IObserver
-{
-    public void Update(string status) =>
-        Console.WriteLine("New stock price: " + status);
-}

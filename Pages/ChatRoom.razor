@@ -1,6 +1,7 @@
-@page "/chatroom"
+@page "/"
 @inject NavigationManager navigationManager
 @using Microsoft.AspNetCore.SignalR.Client;
+@using ObserverChat;
 
 <h1>Observer Chat</h1>
 <hr />
@@ -93,7 +94,7 @@ else
             // Create the chat client
             string baseUrl = navigationManager.BaseUri;
 
-            _hubUrl = baseUrl.TrimEnd('/') + BlazorChatSampleHub.HubUrl;
+            _hubUrl = baseUrl.TrimEnd('/') + ChatHub.HubUrl;
 
             _hubConnection = new HubConnectionBuilder()
                 .WithUrl(_hubUrl)

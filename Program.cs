@@ -1,14 +1,10 @@
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
-using BlazorChat.Data;
-using BlazorChat;
+using ObserverChat;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddSingleton<WeatherForecastService>();
 
 var app = builder.Build();
 
@@ -28,7 +24,7 @@ app.UseRouting();
 
 app.UseEndpoints(endpoints =>
 {
-    endpoints.MapHub<BlazorChatSampleHub>(BlazorChatSampleHub.HubUrl);
+    endpoints.MapHub<ChatHub>(ChatHub.HubUrl);
 });
 
 app.MapBlazorHub();

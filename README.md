@@ -10,6 +10,6 @@ Link para Apresentacao: https://docs.google.com/presentation/d/1v3vXMO4ea1LiQiQ_
 # Arquivos de interesse
 
 * ChatHub.cs
-  * Implementa o pdadão de projeto observer, controla a lista de observadores e faz o "broadcast" das mensagens trocadas
+  * Implementa o padrão de projeto observer, controla a lista de observadores e faz o "broadcast" das mensagens trocadas
 * ChatRoom.razor
   * Aplicação cliente
